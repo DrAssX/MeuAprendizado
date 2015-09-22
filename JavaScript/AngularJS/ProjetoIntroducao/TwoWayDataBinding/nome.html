@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Two-Way Data Binding - Nome</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('myApp', []);
+	app.controller('CtrlNome', function($scope) {
+
+		$scope.nome = "";	
+
+	});
+</script>
+</head>
+<body ng-app="myApp">
+	<div class="row" ng-controller="CtrlNome">
+		<div class="col-md-8">
+			<div class="col-md-4">
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user"></i></span>
+  					<input ng-model="nome" type="text" class="form-control" placeholder="Nome" aria-describedby="sizing-addon1">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<span ng-bind="nome"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
