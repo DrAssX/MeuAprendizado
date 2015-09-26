@@ -1,0 +1,6 @@
+INDEX VERSION 1.127+/home/giancarlo/Documentos/Github/MeuAprendizadoRepository/ProjetosExemplo/DownloadImage/Client/.metadata/.plugins/org.eclipse.jdt.core
+2060750454.index
+2654604139.index
+1397883362.index
+1270315800.index
+370072769.index

@@ -1,0 +1,80 @@
+package br.com.giancarloandroid.androidimageclient;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import br.com.giancarlo.androidimageclient.R;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class Image extends Activity {
+	
+	private ImageView img;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.a_image);
+		this.img = (ImageView) findViewById(R.id.img);
+		new LoadImageFromServer(Image.this){
+			@Override
+			protected void onPostExecute(Bitmap result) {
+				img.setImageBitmap(result);
+			};
+		}.execute("http://10.0.0.103/Server/img/lion.jpg");
+	}
+	
+}
+
+class LoadImageFromServer extends AsyncTask<String, Integer, Bitmap>{
+	
+	ProgressDialog progress = null;
+	Context mContext = null;
+	
+	public LoadImageFromServer(Context context) {
+		this.mContext = context;
+	}
+	
+	@Override
+	protected void onPreExecute() {
+		super.onPreExecute();
+		this.progress = new ProgressDialog(mContext);
+		this.progress.setMessage("Carregando imagem... Aguarde");
+		this.progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		this.progress.setIndeterminate(true);
+	}
+
+	@Override
+	protected Bitmap doInBackground(String... arg0) {
+		Bitmap b = null;
+		try{
+			b = BitmapFactory.decodeStream((InputStream) new URL(arg0[0]).getContent());
+		} catch (MalformedURLException e){
+			e.printStackTrace();
+			return null;
+		} catch (IOException e){
+			e.printStackTrace();
+			return null;
+		}
+		return b;
+	}
+	
+	@Override
+	protected void onProgressUpdate(Integer... values) {
+		super.onProgressUpdate(values);
+	}
+	
+	@Override
+	protected void onPostExecute(Bitmap result) {
+		super.onPostExecute(result);
+	}
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;br.com.giancarlo.androidimageclient&apos; to &apos;br.com.giancarloandroid.androidimageclient&apos;&#x0A;- Original project: &apos;AndroidImageClient&apos;&#x0A;- Original element: &apos;AndroidImageClient/src/br.com.giancarlo.androidimageclient&apos;&#x0A;- Renamed element: &apos;AndroidImageClient/src/br.com.giancarloandroid.androidimageclient&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;br.com.giancarlo.androidimageclient&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;br.com.giancarlo.androidimageclient" name="br.com.giancarloandroid.androidimageclient" qualified="false" references="true" stamp="1443279409100" textual="false" version="1.0"/>
+</session>

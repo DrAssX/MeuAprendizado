@@ -1,0 +1,12 @@
+package br.com.giancarloandroid.androidimageclient;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class Image extends Activity {
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+}
