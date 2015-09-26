@@ -4,5 +4,6 @@
     <string name="app_name">AppCompat</string>
     <string name="hello_world">Olá Mundo</string>
     <string name="action_settings">Configurações</string>
+    <string name="app_compat_dialog">Abrir AppCompatDialog</string>
 
 </resources>
